@@ -1,0 +1,10 @@
+{
+  "name": "pulsetube-api",
+  "main": "src/index.js",
+  "compatibility_date": "2024-09-23",
+  "workers_dev": true,
+  // Uncomment and set if you have a custom domain
+  // "routes": [
+  //   { "pattern": "api.yourdomain.com/*", "zone_name": "yourdomain.com" }
+  // ]
+}
