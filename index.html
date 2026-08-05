@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="PulseTube - Free YouTube video and audio downloader powered by Piped. No sign-in required." />
+  <meta name="theme-color" content="#ff0000" />
+  <title>PulseTube – Free YouTube Downloader</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>▶</text></svg>" />
+</head>
+<body>
+  <header class="header">
+    <div class="header-inner">
+      <a href="/" class="logo-group">
+        <div class="logo" aria-hidden="true">▶</div>
+        <span class="site-title" id="siteName">PulseTube</span>
+      </a>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" title="Toggle theme">
+        <span id="themeIcon">🌙</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="main">
+    <section class="hero">
+      <h1>Download YouTube Videos</h1>
+      <p id="siteTagline">Paste a link and get high-quality video or audio in seconds. Completely free.</p>
+    </section>
+
+    <section class="search-card">
+      <form class="search-form" id="searchForm">
+        <label for="urlInput" class="sr-only">YouTube URL</label>
+        <input
+          type="url"
+          id="urlInput"
+          class="url-input"
+          placeholder="Paste YouTube URL (youtube.com / youtu.be / Shorts)"
+          required
+          autocomplete="off"
+          spellcheck="false"
+        />
+        <button type="submit" class="btn btn-primary" id="searchBtn">
+          <span id="searchBtnText">Get Video</span>
+          <span class="loader hidden" id="searchLoader"></span>
+        </button>
+      </form>
+      <div class="status" id="statusBox" role="status" aria-live="polite"></div>
+    </section>
+
+    <!-- Error Card -->
+    <div class="error-card" id="errorCard">
+      <div class="error-icon">⚠️</div>
+      <h2 class="error-title" id="errorTitle">Something went wrong</h2>
+      <p class="error-msg" id="errorMsg">Please try again.</p>
+      <button class="btn btn-secondary" id="retryBtn">Try Again</button>
+    </div>
+
+    <!-- Video Result -->
+    <article class="video-card" id="videoCard">
+      <div class="video-thumb-wrap">
+        <img class="video-thumb" id="videoThumb" alt="Video thumbnail" loading="lazy" />
+        <span class="duration-badge" id="videoDuration"></span>
+      </div>
+      <div class="video-meta">
+        <h2 class="video-title" id="videoTitle"></h2>
+        <p class="video-channel" id="videoChannel"></p>
+        <div class="video-stats">
+          <span id="videoViews"></span>
+          <span id="videoUpload"></span>
+        </div>
+        <p class="video-desc" id="videoDesc"></p>
+      </div>
+
+      <div class="downloads">
+        <h3 class="section-title">🎬 Video</h3>
+        <div class="format-grid" id="videoFormats"></div>
+
+        <h3 class="section-title">🎧 Audio</h3>
+        <div class="format-grid" id="audioFormats"></div>
+      </div>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <p>
+      Built with <a href="https://github.com/TeamPiped/Piped" target="_blank" rel="noopener">Piped</a>
+      · Open source on GitHub
+    </p>
+    <p class="disclaimer">
+      PulseTube does not host any content. All downloads are served via third-party Piped instances.
+      Respect creators and copyright law. For personal use only.
+    </p>
+  </footer>
+
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
