@@ -29,7 +29,7 @@ const CONFIG = {
   CACHE_DURATION: 5 * 60 * 1000, // 5 minutes
 
   // Request timeout (ms)
-  REQUEST_TIMEOUT: 20000
+  REQUEST_TIMEOUT: 35000
 };
 
 // Freeze to prevent accidental mutation
